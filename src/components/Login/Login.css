@@ -1,0 +1,8 @@
+Button{
+    width:100%;
+}
+.orsec{
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    text-align:center;
+}
