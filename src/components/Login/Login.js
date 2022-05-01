@@ -4,7 +4,11 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from './../firebase.init';
+import auth from './../firebase.init'; 
+ import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+import PageTitle from '../PageTitle/PageTitle';
 const Login = () => {
     const [email,setEmail]=useState('')
     const [pass,setPass]=useState('')
@@ -25,8 +29,10 @@ const Login = () => {
         event.preventDefault()
         signInWithEmailAndPassword(email,pass)
     }
+    const notify = () => toast("Wow so easy !");
     return (
         <div style={{margin:'5%'}}>
+        <PageTitle title='login'></PageTitle>
             <Form className='container w-50 border rounded p-5' onSubmit={handleSubmitbtn}>
             <h2>Login page</h2>
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -53,6 +59,10 @@ const Login = () => {
   <p>or</p>
   <hr></hr>
   </div>
+  <div>
+        <button onClick={notify}>Notify !</button>
+        <ToastContainer />
+      </div>
   <Button className='mt-3' variant="light" type="button">
     Sign in with google
   </Button>

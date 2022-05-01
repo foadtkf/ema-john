@@ -21,7 +21,7 @@ const Header = () => {
                 <Link to="/about">About</Link>
             {
                 user?
-                <Link onClick={logout} to="/login">Logout</Link>:<Link to="/login">Login</Link>
+                <Link onClick={logout} to="/shop">Logout</Link>:<Link to="/login">Login</Link>
             }
             </div>
         </nav>

@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from './../firebase.init';
+import PageTitle from '../PageTitle/PageTitle';
 
 const Signup = () => {
     const [email,setEmail]=useState('')
@@ -41,6 +42,7 @@ const Signup = () => {
     }
     return (
         <div style={{margin:'5%'}}>
+        <PageTitle title='signup page'></PageTitle>
             <Form className='container w-50 border rounded p-5' onSubmit={handleSubmitbtn}>
             <h2>Signup page</h2>
   <Form.Group className="mb-3" controlId="formBasicEmail">

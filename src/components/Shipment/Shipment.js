@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../firebase.init';
+import PageTitle from '../PageTitle/PageTitle';
 
 const Shipment = () => {
     const [user]=useAuthState(auth)
@@ -11,18 +12,23 @@ const Shipment = () => {
     const [address,setAddress]=useState('')
     const handleNameblur=event=>{
         setName(event.target.value)
+        console.log(name)
         }
     const handlePhoneblur=event=>{
             setPhone(event.target.value)
+            console.log(phone)
             }
             const handleAddressblur=event=>{
                 setAddress(event.target.value)
+                console.log(address)
                 }
         const handleSubmitbutton=event=>{
             event.preventDefault()
         }
+
     return (
         <div className='m-5'>
+        <PageTitle title='shipping'></PageTitle>
             <Form className='container w-50 border rounded p-5' onSubmit={handleSubmitbutton}>
             <h2>Shipment page</h2>
   <Form.Group className="mb-3" controlId="formBasicName">
